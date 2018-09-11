@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:composition template="template.xhtml" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ambientinformatica.com.br/jsf2" xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="corpo">
+		<h1 class="page-header">
+			<h:commandButton image="resources/img/solutions/WindowsActiveDIrectory2.png" />
+		</h1>
+
+		<p:separator />
+
+		<p:commandButton value="teste" actionListener="#{inicioControl.teste}" oncomplete="PF('dlg').show();" />
+
+		<p:dataTable var="activeDirectory" value="#{inicioControl.activeDirectoryes}">
+			<f:facet name="header">
+				<h:outputText value="Active Directory" />
+			</f:facet>
+			<p:column headerText="Loja">
+				<h:outputText value="#{activeDirectory.loja}" />
+			</p:column>
+			<p:column headerText="Area">
+				<h:outputText value="#{activeDirectory.area}" />
+			</p:column>
+			<p:column headerText="Nome">
+				<h:outputText value="#{activeDirectory.nome}" />
+			</p:column>
+			<p:column headerText="Loja">
+				<h:outputText value="#{activeDirectory.matricula}" />
+			</p:column>
+			<p:column headerText="Usuario">
+				<h:outputText value="#{activeDirectory.userName}" />
+			</p:column>
+			<p:column headerText="Unidade Organizacional">
+				<h:outputText value="#{activeDirectory.unidadeOrganizacional}" />
+			</p:column>
+			<p:column headerText="Grupo">
+				<h:outputText value="#{activeDirectory.grupo}" />
+			</p:column>
+			<p:column headerText="Resposável">
+				<h:outputText value="#{activeDirectory.resposanvel}" />
+			</p:column>
+			<p:column headerText="Autorização">
+				<h:outputText value="#{activeDirectory.autorizacao}" />
+			</p:column>
+			<p:column headerText="Tarefas">
+				<h:outputText value="#{activeDirectory.tarefas}" />
+			</p:column>
+			<p:column headerText="Data">
+				<h:outputText value="#{activeDirectory.dataCricação}" />
+			</p:column>
+			<p:column headerText="Ultima Alteração">
+				<h:outputText value="#{activeDirectory.ultimaAlteracao}" />
+			</p:column>
+			<p:column headerText="Status">
+				<h:outputText value="#{activeDirectory.status}" />
+			</p:column>
+			<p:column headerText="Descrição">
+				<h:outputText value="#{activeDirectory.descricao}" />
+			</p:column>
+		</p:dataTable>
+
+		<p:dialog header="Initiating destroy process" widgetVar="cd">
+
+			<h:panelGrid columns="12" cellpadding="12">
+
+				<p:outputLabel for="console" value="Loja" />
+				<br />
+				<p:selectOneMenu id="console" value="#{activeDirectory.loja}" effect="fold" editable="true" style="width:125px">
+					<f:selectItem itemLabel="1" itemValue="" />
+					<f:selectItem itemLabel="2" itemValue="Xbox One" />
+					<f:selectItem itemLabel="3" itemValue="PS4" />
+					<f:selectItem itemLabel="4" itemValue="Wii U" />
+					<br />
+				</p:selectOneMenu>
+
+				<p:outputLabel for="area" value="Area" />
+				<br />
+				<p:selectOneMenu id="area" value="#{activeDirectory.area}" effect="fold" editable="true" style="width:170px">
+					<f:selectItem itemLabel="AreaAdministrativa" itemValue="" />
+					<f:selectItem itemLabel="AreaComercial" itemValue="Xbox One" />
+					<f:selectItem itemLabel="AreaFinanceira" itemValue="PS4" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Nome Completo" />
+				<br />
+				<p:inputText value="#{activeDirectory.nome}" placeholder="Digite seu Nome	" />
+
+				<p:outputLabel value="Matricula" />
+				<br />
+				<p:inputText value="#{activeDirectory.matricula}" placeholder="Digite seua Matricula" />
+
+				<p:outputLabel value="Nome Completo" />
+				<br />
+				<p:inputText value="#{activeDirectory.nome}" placeholder="Digite seu Nome	" />
+
+				<p:outputLabel value="Unidade Organizacional" />
+				<br />
+				<p:inputText value="#{activeDirectory.unidadeOrganizacional}" placeholder="Digite seu Unidade	" />
+
+				<p:outputLabel value="Grupo" />
+				<br />
+				<p:inputText value="#{activeDirectory.grupo}" placeholder="Digite Grupo	" />
+
+				<p:outputLabel value="Resposanvél" />
+				<br />
+				<p:inputText value="#{activeDirectory.responsavel}" placeholder="Digite O Resposanvel	" />
+
+				<p:outputLabel value="Autorização" />
+				<br />
+				<p:inputText value="#{activeDirectory.autorizado}" placeholder="Digite quem Autorizou	" />
+
+				<p:outputLabel value="Tarefas" />
+				<br />
+				<p:inputText value="#{activeDirectory.tarefas}" placeholder="Digite a tarefa	" />
+
+				<p:outputLabel value="Unidade Organizacional" />
+				<br />
+				<p:inputText value="#{activeDirectory.unidadeOrganizacional}" placeholder="Digite seu Unidade	" />
+
+				<p:outputLabel for="data" value="Data" />
+				<br />
+				<p:calendar id="data" value="#{activeDirectory.data}" />
+
+				<p:outputLabel value="Ultima Alteração" />
+				<br />
+				<p:inputText value="#{activeDirectory.ultimaAlteracao}" placeholder="Ultima Alteração	" />
+
+				<p:outputLabel for="status" value="Status" />
+				<br />
+				<p:selectOneMenu id="status" value="#{activeDirectory.status}" effect="fold" editable="true" style="width:170px">
+					<f:selectItem itemLabel="Ativo" itemValue="" />
+					<f:selectItem itemLabel="Inativo" itemValue="Xbox One" />
+
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Descrição" />
+				<br />
+				<p:inputText value="#{activeDirectory.Descrição}" placeholder="Descição	" />
+				<br />
+
+			</h:panelGrid>
+
+		</p:dialog>
+
+	</ui:define>
+</ui:composition>
